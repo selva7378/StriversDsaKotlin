@@ -5,7 +5,7 @@ fun main() {
 }
 
 fun threeSum(nums: IntArray): List<List<Int>> {
-//    nums.sort()
+    nums.sort()
     val list = mutableListOf(mutableListOf<Int>())
     for(i in 0 until nums.size) {
         if(i != 0 && nums[i] == nums[i - 1]) continue
