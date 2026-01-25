@@ -1,7 +1,7 @@
 package graph
 
 fun main() {
-
+//    numEnclaves()
 }
 fun numEnclaves(grid: Array<IntArray>): Int {
     if (grid.isEmpty()) return 0
