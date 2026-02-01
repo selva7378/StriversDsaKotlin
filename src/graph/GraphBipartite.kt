@@ -22,3 +22,32 @@ fun dfs(graph: Array<IntArray>,node: Int, col: Int, visited: IntArray): Boolean 
     }
     return true
 }
+
+// below one if bfs version
+fun isBipartiteBfs(graph: Array<IntArray>): Boolean {
+    val color = IntArray(graph.size) { -1 } // -1 = uncolored
+
+    for (i in graph.indices) {
+        if (color[i] != -1) continue
+
+        val queue = ArrayDeque<Int>()
+        queue.add(i)
+        color[i] = 0
+
+        while (queue.isNotEmpty()) {
+            val node = queue.removeFirst()
+
+            for (neighbour in graph[node]) {
+                if (color[neighbour] == -1) {
+                    // assign opposite color
+                    color[neighbour] = 1 - color[node]
+                    queue.add(neighbour)
+                }
+                else if (color[neighbour] == color[node]) {
+                    return false
+                }
+            }
+        }
+    }
+    return true
+}
