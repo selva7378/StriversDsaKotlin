@@ -2,7 +2,6 @@ package binarysearch
 
 
 fun main() {
-
     println(findFloor(intArrayOf(3, 4, 4, 7, 8, 10), 5))
     println(findCeil(intArrayOf(3, 4, 4, 7, 8, 10), 5))
 
