@@ -1,6 +1,6 @@
 package binarysearch
 
-fun searchRange(nums: IntArray, target: Int): IntArray {
+fun firstAndLastPositions(nums: IntArray, target: Int): IntArray {
     var first = -1
     first = firstOccurrence(nums, target)
     if(first == -1) return intArrayOf(-1, -1)
